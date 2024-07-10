@@ -657,7 +657,7 @@ class TuyaLightEntity(TuyaEntity, LightEntity):
         if not self._brightness:
             return None
 
-        brightness = self.device.status.get(self._brightness.dpcode)
+        brightness = float(self.device.status.get(self._brightness.dpcode))
         if brightness is None:
             return None
 
@@ -693,7 +693,7 @@ class TuyaLightEntity(TuyaEntity, LightEntity):
         if not self._color_temp:
             return None
 
-        temperature = self.device.status.get(self._color_temp.dpcode)
+        temperature = float(self.device.status.get(self._color_temp.dpcode))
         if temperature is None:
             return None
 
